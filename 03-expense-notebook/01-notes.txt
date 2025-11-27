@@ -1,0 +1,15 @@
+=> Line of code:
+    const balance = transactions.reduce((acc, transaction) => acc + transaction.amount, 0);
+
+-> transactions.reduce(...) 
+    - The reduce method iterates over the array and accumulates a single value.
+-> Accumulator (acc) 
+    - Starts at 0 (because of the second argument to reduce).
+-> Callback function 
+    - For each transaction, it adds transaction.amount to the accumulator.
+
+=> Line of code:
+    const sortedTransactions = [...transactions].reverse();
+
+-> [...transactions]: The spread operator creates a shallow copy of the array. This ensures you don’t mutate the original transactions.
+-> .reverse(): Reverses the order of elements in the copied array.

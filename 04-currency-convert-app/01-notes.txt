@@ -1,0 +1,17 @@
+=> Line of Code:
+	-> const convertedAmount = (amount * rate).toFixed(2);
+
+-> toFixed(2): Ensures the result is rounded to two decimal places, which is standard for most currencies.
+
+Example Usage:
+
+Javascript
+const amount = 100; // Amount in source currency
+const rate = 74.85; // Exchange rate (e.g., 1 USD to INR)
+const convertedAmount = (amount * rate).toFixed(2);
+
+console.log(`Converted Amount: ₹${convertedAmount}`); // Output: Converted 
+Amount: ₹7485.00
+
+-> toFixed(2) returns a string, so if further calculations are needed, you may need to convert it 
+back to a number using parseFloat() or Number().

@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background-color: #d7e5f1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 21px;
+    color: #212529;
+}
+
+.app {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #f84949;
+    color: white;
+    padding: 20px 25px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.todo-input {
+    padding: 20px 25px;
+    display: flex;
+    gap: 10px;
+    background-color: #f8f4f4;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.todo-input input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #dfe3e7;
+    font-size: 1rem; 
+    transition: all 0.2s;
+    border-radius: 5px;
+}
+
+.todo-input input:focus {
+    outline:none;
+    border-color: #30313a;
+    box-shadow: 0 0 0 3px rgba(119, 73, 248, 0.15);
+}
+
+.todo-input button {
+    background-color: #f84949;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.todo-input button:hover {
+    background-color: #fa7575;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #e9ecee;
+    padding: 15px 25px;
+}
+
+.filter {
+    padding: 5px 3px;
+    cursor: pointer;
+    color: #968686;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.filter:hover {
+    color: #ce6f9e;
+}
+
+.filter.active {
+    color: #c94687;
+    border-bottom: 2px solid #c94687;
+    font-weight: 500;
+}
+
+.todos-container {
+    padding: 15px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#todos-list {
+    list-style-type: none;
+}
+
+/* ------------- below code will take effect after js code is written -------------- */
+
+.todo-item {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+    background-color: #f1f2f3;
+}
+
+.checkbox-container {
+    margin-right: 15px;
+}
+
+.todo-checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d0d3d6;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.todo-checkbox:checked + .checkmark {
+    background-color: #307423;
+    border-color: #8dbb95;
+}
+
+.todo-checkbox:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.todo-item-text {
+    flex: 1;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.todo-item.completed .todo-item-text {
+    text-decoration: line-through;
+    color: #798086;
+}
+
+/* --------------------------------- End ----------------------------------- */
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #484c50;
+    cursor: pointer;
+    font-size: 15px;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.todo-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    color: #fa5252;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    color: #63696e;
+}
+
+.empty-state i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-top: 1px solid #d4d6d8;
+    background-color: #f7f4f4;
+    font-size: 15px;
+}
+
+#items-left {
+    color: #7a8188;
+}
+
+#clear-completed {
+    background: none;
+    border: none;
+    color: #7a8188;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#clear-completed:hover {
+    color: #055c29;
+}

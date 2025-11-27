@@ -1,0 +1,32 @@
+=> line of code:
+    const uncompletedTodos = todos.filter((todo) => !todo.completed);
+
+.filter() creates a new array containing only the elements that pass the test in the callback function.
+
+(todo) => !todo.completed is the test:
+    -> For each todo object, it checks if todo.completed is false.
+    -> If completed is false, the item is included in the new array.
+    -> If completed is true, it’s excluded.
+
+example:
+const todos = [
+  { task: "Buy grocery", completed: true },
+  { task: "wash utensils", completed: false },
+  { task: "wash clothes", completed: false }
+];
+
+const incompleteTodos = todos.filter((todo) => !todo.completed);
+
+console.log(incompleteTodos);
+Output:
+[
+   { task: "wash utensils", completed: false },
+   { task: "wash clothes", completed: false }
+]
+
+=> Line of code:
+    if (filteredTodos?.length === 0) emptyState.classList.remove("hidden");
+
+here The ?. is called the optional chaining operator in JavaScript.
+It allows you to safely access properties of an object without throwing an error if the object is null or undefined.
+Instead of crashing with "Cannot read property 'length' of undefined", it will simply return undefined.

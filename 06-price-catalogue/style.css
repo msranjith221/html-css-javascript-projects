@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+/* Root variables */
+:root {
+    --color-1: #da5eda;
+    --color-2: #1fc55c;
+    --color-3: #160b27;
+    --color-4: #f3f4f6;
+    --color-5: #959ca7;
+    --color-6: #000000;
+    --color-7: #2d1530;
+    --color-8: rgb(215, 144, 230);
+    --color-9: rgb(145, 224, 255);
+    --color-10: rgb(150, 126, 235);
+    --border-radius: 10px;
+    --box-shadow-1: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-2: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --box-shadow-3: 0 20px 25px rgba(0, 0, 0, 0.15); 
+}
+
+body {
+    background-color: var(--color-3);
+    color: var(--color-4);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 15px;
+    line-height: 1.5; 
+}
+
+.container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#th1, #th2{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#th1 {
+    margin-left: 15px;
+    color: var(--color-4);
+}
+
+#th2 {
+    margin-left: 15px;
+    color: var(--color-1);
+}
+
+header p {
+    color: var(--color-5);
+    font-size: 1.4rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-bottom: 55px;;
+}
+
+.card {
+    background-color: var(--color-6);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--box-shadow-1);
+    transition: all 0.2s ease;
+    height: 100%
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--box-shadow-3);
+    background-color: var(--color-7);
+}
+
+.card-header {
+    padding: 25px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.plan-icon {
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(to right, rgb(140, 100, 156), rgb(99, 61, 124));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.plan-icon i {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.price {
+    margin-bottom: 15px;
+}
+
+.currency {
+    font-size: 1.5rem;
+    margin-right: 2px;
+    color: var(--color-1);
+    vertical-align: top;
+}
+
+.amount {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-1); 
+}
+
+.period {
+    font-size: 1rem;
+    color: var(--color-5);
+}
+
+.description {
+    font-size: 1rem;
+    color: var(--color-5);
+}
+
+.card-body {
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.features li i {
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.features li i.fa-check {
+    color: var(--color-2);
+}
+
+.features li i.fa-times {
+    color: #991212;
+}
+
+.features li.disabled {
+    opacity: 0.75;
+    color: var(--color-5);
+}
+
+.card-footer {
+    padding: 20px 30px 30px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-4);
+    background-color: rgba(255, 255, 255, 0.11);
+    border: 2px solid rgba(255, 255, 255, 0.534);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    border-color: var(--color-1);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-accent {
+    background-color: var(--color-1);
+    border-color: var(--color-1);
+    color: #000;
+}
+
+.btn-accent:hover {
+    background-color: var(--color-2);
+    border-color: var(--color-2);
+}
+
+.popular {
+    transform: scale(1.05);
+    border: 2px solid var(--color-1);
+    z-index: 2;
+    animation: pulse 3s infinite;
+}
+
+.popular:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 5px var(--color-8);
+    }
+
+    25% {
+        box-shadow: 0 0 0 5px var(--color-8);
+    }
+
+    50% {
+        box-shadow: 0 0 0 5px var(--color-9);
+    }
+
+    100% {
+        box-shadow: 0 0 0 5px var(--color-10);
+    }
+}
+
+.popular-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(to right, rgb(241, 97, 229), rgb(137, 6, 245));
+    color: rgb(231, 229, 229);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    z-index: 3;
+}
+
+.testimonial {
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+}
+
+.quote {
+    max-width: 700px;
+    background-color: var(--color-6);
+    border-radius: var(--border-radius);
+    padding: 35px;
+    position: relative;
+    box-shadow: var(--box-shadow-2);
+}
+
+.quote i {
+    color: var(--color-1);
+    font-size: 2rem;
+    opacity: 0.35;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.quote p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.65rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hiddeen;
+    margin-right: 15px;
+    border: 2px solid var(--color-1);
+}
+
+.avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+}
+
+.info p {
+    padding: 0;
+    margin: 0; font-size: 0.9rem;
+    color: var(--color-1);
+}
+
+@media (max-width: 770px) {
+ 
+    header {
+        margin-bottom: 30px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        min-width: 410px;
+        margin: 0 auto 35px;
+    }
+
+    .card, .popular {
+        transform: none;
+    }
+
+    .card:hover, .popular:hover {
+        transform: translateY(-5px);
+    }
+
+    .testimonial {
+        margin-top: 35px;
+    }
+
+    .plan-icon i {
+        font-size: 1.5rem;
+    }
+
+    .plan-icon {
+        height: 55px;
+        width: 55px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

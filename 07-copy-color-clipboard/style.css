@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(128deg, rgb(82, 146, 155), white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #1d330387;
+    padding: 15px;
+}
+
+.container {
+    background: rgb(170, 188, 212);
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 10px 20px rgba(90, 10, 180, 0.5);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color:rgb(235, 232, 199);
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 4;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+#h1-plate {
+    background: #758cda;
+    border-radius: 45px;
+}
+
+@keyframes example {
+    0%   {left:0px; top:0px;}
+    25%  {left:50px; top:0px;}
+    50%  {left:0px; top:0px;}
+    75%  {left:-50px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
+#generate-btn {
+    background: linear-gradient(138deg, rgb(5, 77, 87), rgb(117, 183, 228));
+    color: rgb(221, 228, 214);
+    border: 2px solid rgb(189, 221, 238);
+    padding: 0.5rem 1rem;
+    border-radius: 45px;
+    cursor: pointer;
+    font-weight: 450;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+#generate-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 12px rgba(2, 55, 85, 0.5);
+}
+
+#generate-btn:active {
+    transform: translateY(2px);
+}
+
+.color-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 2fr));
+}
+
+.color-square {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(1, 1, 1, 0.5);
+    transition: transform 0.3s;
+}
+
+.color-square:hover {
+    transform: translate(5px);
+}
+
+.color {
+    height: 100px;
+    cursor: pointer;
+}
+
+.color-value {
+    background-color: #a0a847;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.hex-value {
+    color: white;
+    font-weight: 450;
+    letter-spacing: 0.9px;
+}
+
+.copy-btn {
+    cursor: pointer;
+    color: #1e2e1f;
+    transition: color 0.5s;
+}
+
+.copy-btn:hover {
+    color: gold;
+}
+
+@media (max-width: 500px) {
+    .color-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+    }
+}
